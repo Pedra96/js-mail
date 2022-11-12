@@ -14,7 +14,7 @@ function emailCheck() {
     for (let i = 0; i <= emails.length; i++) {
         if (useremail.value == emails[i]) {
             flag = true;
-            document.getElementById("buttonContainer").innerHTML = '<h2 class="mt-2">email trovata<h2>';
+            document.getElementById("buttonContainer").innerHTML = '<h2 class="mt-2">Sei loggato<h2>';
         } else if (flag == true) {
             console.log("email trovata");
             break;
@@ -22,7 +22,7 @@ function emailCheck() {
             buttonContainer.innerHTML = "email non trovata vuoi aggiungere la tua email?";
             buttonContainer.innerHTML += '<div><button onclick="addEmail(useremail.value)" type="button" class="btn btn-primary col-6 col-lg-1 m-2">Si</button><button onclick="addrefused()" type="button" class="btn btn-secondary col-6 col-lg-1 m-2">No</button></div>';
 
-        } else if (useremail.value == "") {
+        }else if (useremail.value==""){
             document.getElementById("bottone").classList.remove("btn-primary");
             document.getElementById("bottone").classList.add("btn-danger");
             break;
@@ -31,14 +31,14 @@ function emailCheck() {
 }
 
 function addrefused() {
-    document.getElementById("buttonContainer").innerHTML = '<h2 class="mt-2">Hai rifiutato ricaricare la pagina per controllare altre emails.<h2>';
+    document.getElementById("buttonContainer").innerHTML = '<h2 class="mt-2">Errore email non trovata riprovare.<h2>';
 }
 
 function addEmail(usermail) {
 
     emails.push(usermail);
     console.log("email aggiunta " + emails[emails.length - 1]);
-    buttonContainer.innerHTML += '<p class="m-0">email aggiunta</p>' + '<button onclick="printEmail(emails)" type="button" class="btn btn-primary col-6 col-lg-1 m-2">Printa lista email</button>';
+    buttonContainer.innerHTML += '<p class="m-0">email aggiunta ora puoi fare il login</p>' + '<button onclick="printEmail(emails)" type="button" class="btn btn-primary col-6 col-lg-1 m-2">Printa lista email</button>';
 }
 
 function printEmail(array) {
